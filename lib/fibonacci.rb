@@ -14,4 +14,8 @@ def fib(num)
   return arr
 end
 
+def fib_rec(num)
+
+end
+
 fib(8)
