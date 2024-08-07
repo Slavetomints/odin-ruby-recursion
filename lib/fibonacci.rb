@@ -3,19 +3,21 @@ def fib(num)
   for i in (0..num)
     if i == 0 || i == 1
       arr.push(1)
-    end
-
-    if i > 2
+    elsif i > 2
       next_num = arr.last(2).inject { |sum, num| sum + num}
       arr.push(next_num)
     end
   end
-  puts arr
-  return arr
+  p arr
 end
 
-def fib_rec(num)
-
+def fibs_rec(num)
+  return [0,1] if num == 0
+  arr = fibs_rec(num - 1)
+  arr.push(arr[-1] + arr[-2])
+  p arr
 end
 
 fib(8)
+
+fibs_rec(8)
